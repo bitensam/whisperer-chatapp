@@ -20,7 +20,7 @@ export const AuthProvider = ({ children }) => {
   // gdy ustawimy stan uzytkownika mozemy ustawić loading na false, poniewaz nie ma co sie juz ladować
   // gdy nie ładujemy mozemy wywyołać historie i dodać do niej stringa ktory ponownie przeniesie nas do widoku chatu
   useEffect(() => {
-    auth.onAuthStateChanged((user) => {
+    auth.onAuthStateChanged(user => {
       setUser(user);
       setLoading(false);
       if (user) { history.push('/chats') }
