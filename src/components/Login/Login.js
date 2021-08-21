@@ -1,18 +1,25 @@
 import React from 'react';
-import { GoogleOutlined, FacebookOutlined } from '@ant-design/icons';
+import { FaUserSecret, FaFacebook, FaGoogle } from 'react-icons/fa';
+import loginBackground from '../../images/fakurian-design-bexwsdM5BCw-unsplash.jpg';
+import './Login.css';
 
 const Login = () => {
   return (
-    <div id="login-page" className="login-page">
+    <div id="login-page" className="login-page"
+      style={{ backgroundImage: `url(${loginBackground})` }}
+    >
       <div id="login-card" className="login-card">
+        <div className='login-card-logo'>
+          <FaUserSecret />
+        </div>
         <h2>Welcome to Whisperer</h2>
         <div className="login-button google">
-          <GoogleOutlined/> Sign In with Google
+          <FaGoogle /> Sign In with Google
         </div>
         <br />
         <br />
         <div className="login-button facebook">
-          <FacebookOutlined/> Sign In with Facebook
+          <FaFacebook /> Sign In with Facebook
         </div>
       </div>
     </div>
