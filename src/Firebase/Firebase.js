@@ -3,7 +3,7 @@ import 'firebase/auth';
 
 // FIREBASE CONFIG
 
-export const Auth = firebase.initializeApp({
+export const auth = firebase.initializeApp({
   apiKey: "AIzaSyDZ_xnh9KwYWfl8VWv7C162CBPzmUtIJ3U",
   authDomain: "whisperer-chatapp.firebaseapp.com",
   projectId: "whisperer-chatapp",
