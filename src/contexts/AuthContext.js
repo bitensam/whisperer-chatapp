@@ -10,8 +10,9 @@ export const useAuth = () => useContext(AuthContext);
 export const AuthProvider = ({ children }) => {
   // ustawienie stanów
   const [loading, setLoading] = useState(true);
-  const [user, setUser] = useState({});
+  const [user, setUser] = useState(null);
   const history = useHistory();
+
 
   // useEffect wywyoła się za kadym razem gdy zmieni się wartość user i history.
   // Gdy stan autoryzacji zmieni się wykona się funckja która da nam dane usera
@@ -22,7 +23,7 @@ export const AuthProvider = ({ children }) => {
     auth.onAuthStateChanged((user) => {
       setUser(user);
       setLoading(false);
-      history.push('/chats');
+      if (user) { history.push('/chats') }
     })
   }, [user, history]);
 
