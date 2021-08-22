@@ -35,11 +35,3 @@
   width: 0; /* Remove scrollbar space */
   background: transparent; /* Optional: just make scrollbar invisible */
 }
-
-@media screen and (max-width:767px) {
-  .ce-chat-list{
-    display: inline !important;
-    height: auto !important;
-    width: 100% !important;
-  }
-}
