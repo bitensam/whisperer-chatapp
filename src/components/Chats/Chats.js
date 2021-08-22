@@ -50,7 +50,7 @@ const Chats = () => {
     axios.get('https://api.chatengine.io/users/me', {
       // odwoluje się do konkretnego uzytkownika dostarczonego przez const { user } = useAuth();, jezeli go ma to wyswietla dla niego konkretny czat
       headers: {
-        'project-id': '76ca2f51-b72e-481a-bd0e-699ebfd516ad',
+        'project-id': process.env.REACT_APP_CHAT_ENGINE_ID,
         'user-name': user.email,
         'user-secret': user.uid,
       }
@@ -76,7 +76,7 @@ const Chats = () => {
 
             axios.post('https://api.chatengine.io/users',
               formdata,
-              { headers: { 'private-key': 'b923f9ab-e5cd-4348-8f2c-06db82e2cee7' } }
+              { headers: { 'private-key': process.env.REACT_APP_CHAT_ENGINE_KEY } }
             )
 
               // jezeli kreowanie uzytkownika jest pomyślne to ustawiamy stan loading na false, dzieki czemu się utworzy
@@ -108,7 +108,7 @@ const Chats = () => {
       {/* konfiguracja chat engina */}
       <ChatEngine
         height='calc(100vh - 66px)'
-        projectID='76ca2f51-b72e-481a-bd0e-699ebfd516ad'
+        projectID={process.env.REACT_APP_CHAT_ENGINE_ID}
         userName={user.email}
         userSecret={user.uid}
       />
