@@ -7,5 +7,14 @@
   box-sizing: border-box;
 }
 
-
+/* @media screen and (max-width:767px) {
+  .ce-chat-list{
+    display: inline !important;
+    height: auto !important;
+    width: 100% !important;
+  }
+  .ce-chats-container{
+    display: inline !important;
+  }
+} */
 
